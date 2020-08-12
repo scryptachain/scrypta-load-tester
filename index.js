@@ -21,7 +21,7 @@ async function init(){
         console.log('CREATING ADDRESS')
         let address = await scrypta.createAddress(password, false)
         console.log('FUNDING ADDRESS')
-        let init = await scrypta.post('/init',{ address: address.pub})
+        let init = await scrypta.post('/init',{ address: address.pub })
         if(init.data.airdrop_tx !== false){
             console.log('INITIALIZATION OF ' + address.pub + ' WAS SUCCESSFUL.')
             while(!finish){
